@@ -1,10 +1,11 @@
 # Complete the kangaroo function below.
 def kangaroo(x1, v1, x2, v2):
-    for i in range(x2 - x1 + 1):
-        if x1 == x2:
-            return "YES"
-        x1 += v1
-        x2 += v2
+    if v2 >= v1:
+        return "NO"
+    j = abs(x1 - x2) // abs(v2 - v1)
+    if x1 + (v1 * j) == x2 + (v2 * j):
+        return "YES"
+
     return "NO"
 
 
